@@ -101,6 +101,8 @@ abstract class BaseManager
 		$data1 = [
 			'ID_template' => $this->encodeString($templateId),
 			'return_url' => $this->encodeString($returnUrl),
+			'email_from' => $this->encodeString($user->getEmailFrom()),
+			'name_from' => $this->encodeString($user->getNameFrom()),
 			'vocative' => $this->encodeString($user->getVocative()),
 			'prefix' => $this->encodeString($user->getPrefix()),
 			'first_name' => $this->encodeString($user->getFirstName()),

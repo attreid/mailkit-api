@@ -34,6 +34,12 @@ class User
 	private $prefix = null;
 
 	/** @var string|null */
+	private $emailFrom = null;
+
+	/** @var string|null */
+	private $nameFrom = null;
+
+	/** @var string|null */
 	private $vocative = null;
 
 	/** @var string|null */
@@ -214,6 +220,44 @@ class User
 	public function getPrefix(): ?string
 	{
 		return $this->prefix;
+	}
+
+	/**
+	 * @param string|null $emailFrom
+	 * @return $this
+	 */
+	public function setEmailFrom(?string $emailFrom): self
+	{
+		$this->emailFrom = $emailFrom;
+
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getEmailFrom(): ?string
+	{
+		return $this->emailFrom;
+	}
+
+	/**
+	 * @param string|null $nameFrom
+	 * @return $this
+	 */
+	public function setNameFrom(?string $nameFrom): self
+	{
+		$this->nameFrom = $nameFrom;
+
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getNameFrom(): ?string
+	{
+		return $this->nameFrom;
 	}
 
 	/**

@@ -105,6 +105,8 @@ class UsersManager extends BaseManager
 
 		foreach ($rpcResponse->getArrayValue() as $userData) {
 			$user = new User();
+			$user->setEmailFrom($userData['EMAIL_FROM'] ?? null);
+			$user->setNameFrom($userData['NAME_FROM'] ?? null);
 			$user->setVocative($userData['VOCATIVE'] ?? null);
 			$user->setPrefix($userData['PREFIX'] ?? null);
 			$user->setPhone($userData['PHONE'] ?? null);

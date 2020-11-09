@@ -203,6 +203,8 @@ class SubscribeWebHook
 		$user->setReplyTo(self::validateEmptyString($jsonContent['REPLY_TO']));
 		$user->setState(self::validateEmptyString($jsonContent['STATE']));
 		$user->setStreet(self::validateEmptyString($jsonContent['STREET']));
+		$user->setEmailFrom(self::validateEmptyString($jsonContent['EMAIL_FROM']));
+		$user->setNameFrom(self::validateEmptyString($jsonContent['NAME_FROM']));
 		$user->setVocative(self::validateEmptyString($jsonContent['VOCATIVE']));
 		$user->setZip(self::validateEmptyString($jsonContent['ZIP']));
 		$user->setCity(self::validateEmptyString($jsonContent['CITY']));
