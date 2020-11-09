@@ -132,6 +132,9 @@ class UsersManager extends BaseManager
 				$user->setCustomField($i, $userData['CUSTOM_'.$i] ?? null);
 			}
 
+			$user->setMobile($userData['IP_SRC'] ?? null);
+			$user->setMobile($userData['FORM_URL'] ?? null);
+
 			$users[] = $user;
 		}
 

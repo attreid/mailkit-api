@@ -215,6 +215,9 @@ class SubscribeWebHook
 			$user->setCustomField($i, $jsonContent['CUSTOM'.$i] ?? null);
 		}
 
+		$user->setCountry(self::validateEmptyString($jsonContent['IP_SRC']));
+		$user->setCountry(self::validateEmptyString($jsonContent['FORM_URL']));
+
 		return $user;
 	}
 

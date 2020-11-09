@@ -15,19 +15,19 @@ class User
 	/** @var int|null */
 	private $id = null;
 
-	/** @var UserStatus|null  */
+	/** @var UserStatus|null */
 	private $status = null;
 
 	/** @var InsertStatus|null */
 	private $insertStatus = null;
 
-	/** @var string|null  */
+	/** @var string|null */
 	private $email = null;
 
-	/** @var string|null  */
+	/** @var string|null */
 	private $firstName = null;
 
-	/** @var string|null  */
+	/** @var string|null */
 	private $lastName = null;
 
 	/** @var string|null */
@@ -69,7 +69,7 @@ class User
 	/** @var string|null */
 	private $state = null;
 
-	/** @var string|null  */
+	/** @var string|null */
 	private $country = null;
 
 	/** @var string|null */
@@ -80,6 +80,12 @@ class User
 
 	/** @var int|null */
 	private $mailingListId = null;
+
+	/** @var string|null */
+	private $ipSrc = null;
+
+	/** @var string|null */
+	private $formUrl = null;
 
 	/** @var array|string[] */
 	private $customFields = [];
@@ -533,6 +539,44 @@ class User
 	public function setMailingListId(?int $mailingListId): self
 	{
 		$this->mailingListId = $mailingListId;
+
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getIpSrc(): ?string
+	{
+		return $this->ipSrc;
+	}
+
+	/**
+	 * @param string|null $ipSrc
+	 * @return $this
+	 */
+	public function setIpSrc(?string $ipSrc): self
+	{
+		$this->ipSrc = $ipSrc;
+
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getFormUrl(): ?string
+	{
+		return $this->formUrl;
+	}
+
+	/**
+	 * @param string|null $formUrl
+	 * @return $this
+	 */
+	public function setFormUrl(?string $formUrl): self
+	{
+		$this->formUrl = $formUrl;
 
 		return $this;
 	}

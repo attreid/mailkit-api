@@ -50,7 +50,7 @@ abstract class BaseManager
 	}
 
 	/**
-	 * @param string $str|null
+	 * @param string $str |null
 	 * @return string
 	 */
 	protected function encodeString(?string $str = null): ?string
@@ -128,14 +128,20 @@ abstract class BaseManager
 
 		$data3 = [];
 		foreach ($user->getCustomFields() as $fieldNumber => $value) {
-			$data3['custom'.$fieldNumber] = $this->encodeString($value);
+			$data3['custom' . $fieldNumber] = $this->encodeString($value);
 		}
+
+		$data4 = [
+			'ip_src' => $this->encodeString($user->getIpSrc()),
+			'form_url' => $this->encodeString($user->getFormUrl()),
+		];
 
 		$data1 = $this->filterNullsFromArray($data1);
 		$data2 = $this->filterNullsFromArray($data2);
 		$data3 = $this->filterNullsFromArray($data3);
+		$data4 = $this->filterNullsFromArray($data4);
 
-		return [$data1, $data2, $data3];
+		return [$data1, $data2, $data3, $data4];
 	}
 
 	/**
